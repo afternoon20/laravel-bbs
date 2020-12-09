@@ -13,7 +13,7 @@
       <main>
         <div class="entry-list">
           @auth
-            <a href="create.html" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>新規作成</a>
+            <a href="{{ url('/create') }}" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>新規作成</a>
           @else
             <span class="btn disabled"><i class="material-icons left">add</i>新規作成</span>
           @endauth

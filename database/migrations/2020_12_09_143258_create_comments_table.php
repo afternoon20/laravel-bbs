@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoginUserTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateLoginUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('login_user', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('login_id');
-            $table->string('name');
-            $table->string('password');
+            $table->foreignId('post_id');
+            $table->foreignId('login_id');
+            $table->string('body');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateLoginUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('login_user');
+        Schema::dropIfExists('comments');
     }
 }
