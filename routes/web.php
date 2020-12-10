@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TopController@index');
 
-Auth::routes();
+Auth::routes(['reset'=> false,]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/create', 'CreatePostController@index');
 Route::post('/create', 'CreatePostController@create');
+
+Route::get('/post', 'PostController@index');
+Route::post('/comment', 'CommentsController@put');
+
+
 
 

@@ -33,95 +33,19 @@
             </div>
             <div class="entry-more">
               <a href="/post?id={{$item->id}}">続きをみる</a>
-              <div class="entry-comment">コメント (<span class="entory-comment__amount">3</span>)</div>
+              <div class="entry-comment">コメント (
+                <span class="entory-comment__amount">
+                  @if( $item->comments < 1 )
+                    0
+                  @else
+                    {{$item->comments}}
+                  @endif
+                </span>)
+              </div>
             </div>
           </div>
           @endforeach
           @endif
-          <div class="entry">
-            <header class="entry-header">
-              <h3 class="entry-ttl">吾輩は猫である</h3>
-              <div class="entry-date">
-                投稿日：
-                <time>2020.7.20</time>
-              </div>
-            </header>
-            <div class="entry-body">
-              吾輩は猫である。名前はまだ無い。 どこで生れたか頓と見當がつかぬ。何でも薄暗いじめじめした所でニヤーニヤー泣いて居た事丈は記憶して居る。
-              吾輩はこゝで始めて人間といふものを見た。然もあとで聞くとそれは書生といふ人間中で一番獰悪な種族であつたさうだ。
-              此書生といふのは時々我々を捕へて煮て食ふといふ話である。然し其當時は何といふ考もなかつたから別段恐しいとも思はなかつた。
-            </div>
-            <div class="entry-more">
-              <a href="post.html">続きをみる</a>
-              <div class="entry-comment">コメント (<span class="entory-comment__amount">3</span>)</div>
-            </div>
-          </div>
-          <div class="entry">
-            <header class="entry-header">
-              <h3 class="entry-ttl">タイトル</h3>
-              <div class="entry-date">
-                投稿日：
-                <time>2020.５.20</time>
-              </div>
-            </header>
-            <div class="entry-body">
-              ここにテキストを入力します。 データベースにテキストが入っています。
-            </div>
-            <div class="entry-more">
-              <a href="post.html">続きをみる</a>
-              <div class="entry-comment">コメント (<span class="entory-comment__amount">3</span>)</div>
-            </div>
-          </div>
-          <div class="entry">
-            <header class="entry-header">
-              <h3 class="entry-ttl">吾輩は猫である</h3>
-              <div class="entry-date">
-                投稿日：
-                <time>2020.7.20</time>
-              </div>
-            </header>
-            <div class="entry-body">
-              吾輩は猫である。名前はまだ無い。 どこで生れたか頓と見當がつかぬ。何でも薄暗いじめじめした所でニヤーニヤー泣いて居た事丈は記憶して居る。
-              吾輩はこゝで始めて人間といふものを見た。然もあとで聞くとそれは書生といふ人間中で一番獰悪な種族であつたさうだ。
-              此書生といふのは時々我々を捕へて煮て食ふといふ話である。然し其當時は何といふ考もなかつたから別段恐しいとも思はなかつた。
-            </div>
-            <div class="entry-more">
-              <a href="post.html">続きをみる</a>
-              <div class="entry-comment">コメント (<span class="entory-comment__amount">3</span>)</div>
-            </div>
-          </div>
-          <div class="entry">
-            <header class="entry-header">
-              <h3 class="entry-ttl">タイトル</h3>
-              <div class="entry-date">
-                投稿日：
-                <time>2020.５.20</time>
-              </div>
-            </header>
-            <div class="entry-body">
-              ここにテキストを入力します。 データベースにテキストが入っています。
-            </div>
-            <div class="entry-more">
-              <a href="post.html">続きをみる</a>
-              <div class="entry-comment">コメント (<span class="entory-comment__amount">3</span>)</div>
-            </div>
-          </div>
-          <div class="entry">
-            <header class="entry-header">
-              <h3 class="entry-ttl">タイトル</h3>
-              <div class="entry-date">
-                投稿日：
-                <time>2020.５.20</time>
-              </div>
-            </header>
-            <div class="entry-body">
-              ここにテキストを入力します。 データベースにテキストが入っています。
-            </div>
-            <div class="entry-more">
-              <a href="post.html">続きをみる</a>
-              <div class="entry-comment">コメント (<span class="entory-comment__amount">3</span>)</div>
-            </div>
-          </div>
         </div>
 
         <ul class="pagination center">

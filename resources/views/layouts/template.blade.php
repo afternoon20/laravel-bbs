@@ -51,7 +51,7 @@
               </form>
               <li><a class="white-text waves-effect waves-light btn-flat modal-trigger" href="#modal">退会する</a></li>
               <!-- ポップアップ表示 -->
-              <div id="modal" class="modal">
+              <div id="modal" class="modal ">
                 <div class="modal-content post-modal">
                   <h3 class="modal-txt">本当に退会しますか？</h3>
                   <p class="modal-txt">一度退会すると、復元はできません。<br />掲示板の作成、編集、削除ができなくなります。</p>
@@ -59,7 +59,7 @@
                 <div class="modal-footer">
                   <form action="../deleteForm.html" method="post">
                     <!-- <input type="hidden" name="post_id" value="<?php //echo $entry[post_id];?>" /> -->
-                    <input class="btn blue" type="submit" value="削除する" />
+                    <input class="btn red" type="submit" value="削除する" />
                   </form>
                 </div>
               </div>

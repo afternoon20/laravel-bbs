@@ -15,12 +15,22 @@ class TopController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // ログインしていない場合は、ログイン画面に遷移する
+        // $this->middleware('auth');
     }
 
     public function index()
     {
-        $items = DB::table('posts')->orderBy('created_at','desc')->get();
+        $sub = DB::table('comments')
+        ->select(DB::raw('post_id, count(id) AS comments'))
+        ->groupBy('post_id')
+        ->toSql();
+        
+        $items = DB::table('posts')
+          ->select(DB::raw('id,title,body,created_at,comments'))
+          ->leftJoinSub($sub,'comments','posts.id','comments.post_id')
+          ->orderBy('created_at','desc')
+          ->get();
         // dd($items);
         return view('top', ['items' => $items]);
     }

@@ -27,7 +27,7 @@
               <input id="name" type="text" name="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required />
               @error('name')
                 <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
+                  <strong class="red-text">{{ $message }}</strong>
                 </span>
               @enderror
             </label>
@@ -37,7 +37,7 @@
               <span class="password-toggler"><i class="material-icons left">visibility</i></span>
               @error('password')
                 <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
+                  <strong class="red-text">パスワードは8文字以上である必要があります。</strong>
                 </span>
               @enderror
             </label>

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class CreatePostController extends Controller
+
+class CommentsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,23 +15,23 @@ class CreatePostController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
-    public function index()
-    {
-        return view('create');
-    }
-
-    public function create(Request $request)
+    public function put(Request $request)
     {
         $param = [
-			'title' => $request->title,
+            'post_id' => $request->post_id,
+            'login_id' => $request->login_id,
             'body' => $request->body,
             'created_at' => date("Y-m-d H:i:s"),
         ];
-        DB::table('posts')->insert($param);
-        $id = DB::getPdo()->lastInsertId();
-        return redirect('/post?id='.$id);
+        // dd($param);
+       
+        DB::table('comments')->insert($param);
+
+        
+
+        return redirect(url()->previous());
     }
 }
