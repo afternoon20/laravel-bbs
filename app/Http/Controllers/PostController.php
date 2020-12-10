@@ -31,7 +31,7 @@ class PostController extends Controller
         ->leftJoin('users','comments.login_id','users.login_id')
         ->where('post_id',$id)
         ->orderByDesc('created_at')
-        ->get();
+        ->paginate(10);
         
         return view('post', ['item' => $item,'comments'=>$comments]);
     }

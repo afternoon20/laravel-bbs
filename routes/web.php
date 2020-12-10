@@ -24,7 +24,7 @@ Auth::routes(['reset'=> false,]);
 Route::get('/create', 'CreatePostController@index');
 Route::post('/create', 'CreatePostController@create');
 
-Route::get('/post', 'PostController@index');
+Route::get('/post/{id}', 'PostController@index');
 Route::post('/comment', 'CommentsController@put');
 
 

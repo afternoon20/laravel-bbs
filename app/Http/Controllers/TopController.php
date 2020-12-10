@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Post;
+use App\Comment;
 
 
 class TopController extends Controller
@@ -30,7 +32,7 @@ class TopController extends Controller
           ->select(DB::raw('id,title,body,created_at,comments'))
           ->leftJoinSub($sub,'comments','posts.id','comments.post_id')
           ->orderBy('created_at','desc')
-          ->get();
+          ->paginate(2);
         // dd($items);
         return view('top', ['items' => $items]);
     }

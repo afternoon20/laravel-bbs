@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Post;
+
 
 class CreatePostController extends Controller
 {
@@ -24,12 +26,18 @@ class CreatePostController extends Controller
 
     public function create(Request $request)
     {
-        $param = [
-			'title' => $request->title,
+        $post = Post::create([
+            'title' => $request->title,
             'body' => $request->body,
             'created_at' => date("Y-m-d H:i:s"),
-        ];
-        DB::table('posts')->insert($param);
+        ]);
+        $post->save();
+        // $param = [
+		// 	'title' => $request->title,
+        //     'body' => $request->body,
+        //     'created_at' => date("Y-m-d H:i:s"),
+        // ];
+        // DB::table('posts')->insert($param);
         $id = DB::getPdo()->lastInsertId();
         return redirect('/post?id='.$id);
     }

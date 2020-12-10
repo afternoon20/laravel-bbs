@@ -75,6 +75,7 @@
               @endif
             </div>
           </div>
+          {{ $comments->links('vendor.pagination.materialize') }}
         </div>
       </main>
        <!-- ポップアップ表示 -->
