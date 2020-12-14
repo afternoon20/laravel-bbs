@@ -85,8 +85,9 @@
             <p>一度削除すると、復元はできません。<br>コメントも削除されます。</p>
           </div>
           <div class="modal-footer">
-            <form action="../deleteForm.php" method="post">
-              <input type="hidden" name="post_id" value="<?php //echo $entry['post_id'];?>">
+            <form action="{{ url('/delete') }}" method="POST">
+              @csrf
+              <input type="hidden" name="post_id" value="{{$item->id}}">
               <input class="btn red" type="submit" value="削除する" />
             </form> 
           </div>

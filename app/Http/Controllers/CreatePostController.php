@@ -39,6 +39,6 @@ class CreatePostController extends Controller
         // ];
         // DB::table('posts')->insert($param);
         $id = DB::getPdo()->lastInsertId();
-        return redirect('/post?id='.$id);
+        return redirect('/post/'.$id);
     }
 }
