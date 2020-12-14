@@ -35,6 +35,26 @@ class PostController extends Controller
         return view('post', ['item' => $item,'comments'=>$comments]);
     }
 
+    public function edit(Request $request)
+    {
+        $this->middleware('auth');
+        $id = $request->id;
+        $item = Post::find($id);
+        return view('/edit',['item' => $item]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->middleware('auth');
+        $id = $request->id;
+        $item = Post::find($id);
+        $item->title = $request->title;
+        $item->body = $request->body;
+        $item->save();
+        return redirect('/');
+    }
+
+
     public function delete(Request $request)
     {
         $this->middleware('auth');

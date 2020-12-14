@@ -10,7 +10,7 @@
       <span>&gt;</span>
       <div class="post__btn">
         @auth
-        <a href="edit.html" class="waves-effect waves-light btn blue">編集する</a>
+        <a href="{{ url('/edit?id=') }}{{ $item-> id }}" class="waves-effect waves-light btn blue">編集する</a>
         <a class="waves-effect waves-light btn grey lighten-1 modal-trigger" href="#modal-del">削除</a>
         @else
         <span class="btn disabled">編集する</span>

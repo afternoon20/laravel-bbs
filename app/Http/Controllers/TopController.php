@@ -34,6 +34,13 @@ class TopController extends Controller
           ->orderBy('created_at','desc')
           ->paginate(2);
         // dd($items);
+
+        foreach($items as $item){
+            $date = $item->created_at;
+            // 日付のみ表示
+            // $item->created_at = date('Y-m-d',$date->format('Y'));
+            dd($item);
+        }
         return view('top', ['items' => $items]);
     }
 }
