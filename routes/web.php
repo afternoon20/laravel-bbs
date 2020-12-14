@@ -27,6 +27,11 @@ Route::post('/create', 'CreatePostController@create');
 Route::get('/post/{id}', 'PostController@index');
 Route::post('/comment', 'CommentsController@put');
 
+Route::post('/edit{id}', 'CommentsController@edit');
+Route::post('/edit', 'CommentsController@update');
+
+
+
 Route::post('/delete', 'PostController@delete');
 
 
