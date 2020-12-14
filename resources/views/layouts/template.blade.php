@@ -57,7 +57,7 @@
                   <p class="modal-txt">一度退会すると、復元はできません。<br />掲示板の作成、編集、削除ができなくなります。</p>
                 </div>
                 <div class="modal-footer">
-                  <form action="../deleteForm.html" method="post">
+                  <form action="{{ url('/withdrawal') }}" method="get">
                     <!-- <input type="hidden" name="post_id" value="<?php //echo $entry[post_id];?>" /> -->
                     <input class="btn red" type="submit" value="削除する" />
                   </form>
@@ -70,11 +70,11 @@
               <li>
                 <div class="center dropdown-txt">
                   <i class="material-icons tiny">person</i>
-                  田中太郎
+                  {{ Auth::user()->name }}さん
                 </div>
               </li>
               <li class="divider" tabindex="-1"></li>
-              <li><a href="logoutForm.html">ログアウト</a></li>
+              <li><a href="{{ route('logout') }}">ログアウト</a></li>
               <li><a class="grey-text lighten-1 modal-trigger" href="#modal-mb">退会する</a></li>
             </ul>
             @endguest

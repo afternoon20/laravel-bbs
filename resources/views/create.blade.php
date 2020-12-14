@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('content')
 <div class="container">
-      <a href="index.html" class="teal-text lighten-3 breadcrumbs">
+      <a href="/" class="teal-text lighten-3 breadcrumbs">
         <span class="icon">
           <i class="material-icons">home</i>
         </span>

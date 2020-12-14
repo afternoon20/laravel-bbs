@@ -24,6 +24,8 @@ class PostController extends Controller
         $item = DB::table('posts')
         ->where('id', $id)
         ->first();
+        $date = $item->created_at;
+        $item->created_at = date('Y-m-d',strtotime($date));
 
         $comments = DB::table('comments')
         ->select('comments.body', 'users.name', 'comments.created_at')
@@ -51,7 +53,7 @@ class PostController extends Controller
         $item->title = $request->title;
         $item->body = $request->body;
         $item->save();
-        return redirect('/');
+        return redirect()->route('post', ['id' => $id]);
     }
 
 

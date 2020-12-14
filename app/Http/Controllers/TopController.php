@@ -32,14 +32,12 @@ class TopController extends Controller
           ->select(DB::raw('id,title,body,created_at,comments'))
           ->leftJoinSub($sub,'comments','posts.id','comments.post_id')
           ->orderBy('created_at','desc')
-          ->paginate(2);
+          ->paginate(10);
         // dd($items);
 
         foreach($items as $item){
             $date = $item->created_at;
-            // 日付のみ表示
-            // $item->created_at = date('Y-m-d',$date->format('Y'));
-            dd($item);
+            $item->created_at = date('Y-m-d',strtotime($date));
         }
         return view('top', ['items' => $items]);
     }

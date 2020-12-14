@@ -1,10 +1,9 @@
 @extends('layouts.template')
 @section('content')
 <div class="container">
-      <a href="index.php" class="teal-text lighten-3 breadcrumbs"><span class="icon"><i class="material-icons">home</i></span>ホーム</a>
+      <a href="/" class="teal-text lighten-3 breadcrumbs"><span class="icon"><i class="material-icons">home</i></span>ホーム</a>
       <span>&gt;</span>
-      <a class="teal-text lighten-3" href="post.html">{{$item->title}}</a>
-      <span>&gt;</span>
+      <a class="teal-text lighten-3" href="/post/{{$item->id}}">{{$item->title}}</a>
       <h2 class="center center">編集する</h2>
       <p class="center"><br /></p>
       <main>

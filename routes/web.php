@@ -24,13 +24,17 @@ Auth::routes(['reset'=> false,]);
 Route::get('/create', 'CreatePostController@index');
 Route::post('/create', 'CreatePostController@create');
 
-Route::get('/post/{id}', 'PostController@index');
+Route::get('/post/{id}', 'PostController@index')->name('post');
 Route::post('/comment', 'CommentsController@put');
 
 Route::get('/edit', 'PostController@edit');
 Route::post('/edit', 'PostController@update');
 
 Route::post('/delete', 'PostController@delete');
+
+Route::get('/withdrawal', 'WithdrawalController@index');
+
+
 
 
 
