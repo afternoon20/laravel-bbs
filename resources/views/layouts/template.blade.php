@@ -17,8 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" defer/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
@@ -90,11 +89,11 @@
         </main>
     <footer class="teal lighten-3">
       <div class="footer-content">
-        <p class="center white-text">©Copyright2020 Afternoon-Web.All Rights Reserved.</p>
+        <p class="center white-text">©Copyright2020 Afternoon20. All Rights Reserved.</p>
       </div> 
     </footer>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ asset('js/materialize.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
   </body>
 </html>
