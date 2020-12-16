@@ -1,5 +1,5 @@
 @extends('layouts.template')
-
+@section('title', '新規登録')
 @section('content')
   <div class="container">
       <a href="/" class="teal-text lighten-3 breadcrumbs">

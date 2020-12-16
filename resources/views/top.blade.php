@@ -45,6 +45,8 @@
             </div>
           </div>
           @endforeach
+          @else
+          <p align="center text-red">投稿が一つもありません。ログインして投稿してください。</p>
           @endif
         </div>
         {{ $items->links('vendor.pagination.materialize') }}

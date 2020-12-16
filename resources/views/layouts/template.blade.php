@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    @hasSection('title')
+      <title>@yield('title') | {{ config('app.name') }}</title>
+    @else
+      <title>{{ config('app.name') }} | LaravelとMaterializeを使った掲示板</title>
+    @endif
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -50,14 +54,14 @@
               </form>
               <li><a class="white-text waves-effect waves-light btn-flat modal-trigger" href="#modal">退会する</a></li>
               <!-- ポップアップ表示 -->
-              <div id="modal" class="modal ">
+              <div id="modal" class="modal">
                 <div class="modal-content post-modal">
                   <h3 class="modal-txt">本当に退会しますか？</h3>
                   <p class="modal-txt">一度退会すると、復元はできません。<br />掲示板の作成、編集、削除ができなくなります。</p>
                 </div>
                 <div class="modal-footer">
                   <form action="{{ url('/withdrawal') }}" method="get">
-                    <!-- <input type="hidden" name="post_id" value="<?php //echo $entry[post_id];?>" /> -->
+                    @csrf
                     <input class="btn red" type="submit" value="削除する" />
                   </form>
                 </div>
@@ -77,11 +81,24 @@
               <li><a class="grey-text lighten-1 modal-trigger" href="#modal-mb">退会する</a></li>
             </ul>
             @endguest
-
-            
           </div>
         </div>
       </nav>
+      @auth
+      <!-- スマホ表示のモーダルウィンドウ -->
+      <div id="modal-mb" class="modal">
+        <div class="modal-content post-modal">
+          <h3 class="modal-txt">本当に退会しますか？</h3>
+          <p class="modal-txt">一度退会すると、復元はできません。<br />掲示板の作成、編集、削除ができなくなります。</p>
+        </div>
+        <div class="modal-footer">
+          <form action="{{ url('/withdrawal') }}" method="get">
+            <input class="btn red" type="submit" value="削除する" />
+          </form>
+        </div>
+      </div>
+      @endauth
+      
     </header>
     <div id="app">
         <main class="py-4">

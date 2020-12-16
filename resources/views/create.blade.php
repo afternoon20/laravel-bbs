@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('title', '新規作成')
 @section('content')
 <div class="container">
       <a href="/" class="teal-text lighten-3 breadcrumbs">
@@ -13,7 +14,7 @@
       <main>
         <div class="form-wrapper">
           <form action="/create" method="POST" >
-          　@CSRF
+            @CSRF
             <label>タイトル</label>
             <input type="text" name="title" required/>
             <label>内容</label>

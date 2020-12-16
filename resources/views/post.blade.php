@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('title', "$item->title")
 @section('content')
 <div class="container">
       <a href="/" class="teal-text lighten-3 breadcrumbs">

@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('title', $item->title."の編集")
 @section('content')
 <div class="container">
       <a href="/" class="teal-text lighten-3 breadcrumbs"><span class="icon"><i class="material-icons">home</i></span>ホーム</a>
