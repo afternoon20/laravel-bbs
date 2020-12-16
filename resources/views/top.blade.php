@@ -29,7 +29,7 @@
               </div>
             </header>
             <div class="entry-body">
-              {{$item->body}}
+            {!! nl2br(e($item->body)) !!}
             </div>
             <div class="entry-more">
               <a href="/post/{{$item->id}}">続きをみる</a>

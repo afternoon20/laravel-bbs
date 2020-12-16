@@ -14,7 +14,7 @@
             <label>タイトル</label>
             <input type="text" name="title" value="{{$item->title}}" required />
             <label>内容</label>
-            <textarea name="body" class="materialize-textarea" cols="30" rows="10">{{$item->body}}</textarea>
+            <textarea name="body" class="materialize-textarea" cols="30" rows="10">{!! nl2br(e($item->body)) !!}</textarea>
             <input type="hidden" name="id" value="{{$item->id}}" />
             <div class="center form__btn">
               <input class="btn" type="submit" value="編集する" />
