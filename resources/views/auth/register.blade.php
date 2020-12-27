@@ -11,23 +11,23 @@
       <span>&gt;</span>
       <h2 class="center center">登録</h2>
       <p class="center">ログインIDとパスワードを入力して登録してください。</p>
+      @error('login_id')
+        <p class="center red-text">
+          すでに登録されているIDです。
+        </p>
+      @enderror
       <main>
         <div class="form-wrapper">
           <form action="{{ route('register') }}" method="POST">
             @csrf
             <label for="login_id">ログインID(半角英数字のみ)
               <input id="login_id" type="text" name="login_id"  class="@error('login_id') is-invalid @enderror" value="{{ old('login_id') }}" required />
-              @error('login_id')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
             </label>
             <label for="name">ニックネーム
               <input id="name" type="text" name="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required />
               @error('name')
                 <span class="invalid-feedback" role="alert">
-                  <strong class="red-text">{{ $message }}</strong>
+                  <strong class="red-text">内容に不備があります。</strong>
                 </span>
               @enderror
             </label>
