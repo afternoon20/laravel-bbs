@@ -31,7 +31,6 @@ class PostController extends Controller
         ->select('comments.body', 'users.name', 'comments.created_at')
         ->leftJoin('users', 'comments.login_id', 'users.login_id')
         ->where('post_id', $id)
-        ->orderByDesc('created_at')
         ->paginate(10);
         
         return view('post', ['item' => $item,'comments'=>$comments]);
